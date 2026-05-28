@@ -1,0 +1,15 @@
+[Unit]
+Description=Vaskeladden HubSpot scraper webhook
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/vaskeladden-automation
+EnvironmentFile=/opt/vaskeladden-automation/.env
+ExecStart=/usr/bin/node dist/index.js
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
