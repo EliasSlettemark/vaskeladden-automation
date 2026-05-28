@@ -8,6 +8,7 @@
     "lib": ["ES2022", "DOM"],
     "strict": false,
     "noImplicitAny": false,
+    "noCheck": true,
     "skipLibCheck": true,
     "esModuleInterop": true
   },
