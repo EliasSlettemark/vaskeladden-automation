@@ -9,8 +9,8 @@
     "start": "node --env-file=.env dist/index.js",
     "start:dev": "tsx --env-file=.env.local src/index.ts",
     "pm2:start": "pm2 start ecosystem.config.cjs",
-    "pm2:restart": "pm2 restart scraper",
-    "pm2:logs": "pm2 logs scraper"
+    "pm2:restart": "pm2 restart vaskeladden-automation",
+    "pm2:logs": "pm2 logs vaskeladden-automation"
   },
   "dependencies": {
     "@puppeteer/browsers": "^2.13.0",

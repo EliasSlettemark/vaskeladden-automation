@@ -1,7 +1,8 @@
 module.exports = {
   apps: [
     {
-      name: "scraper",
+      name: "vaskeladden-automation",
+      exec_mode: "fork",
       cwd: "/opt/vaskeladden-automation",
       script: "dist/index.js",
       interpreter: "node",
