@@ -7,7 +7,10 @@
     "build": "tsc",
     "install-chrome": "npx --yes @puppeteer/browsers install chrome",
     "start": "node --env-file=.env dist/index.js",
-    "start:dev": "tsx --env-file=.env.local src/index.ts"
+    "start:dev": "tsx --env-file=.env.local src/index.ts",
+    "pm2:start": "pm2 start ecosystem.config.cjs",
+    "pm2:restart": "pm2 restart scraper",
+    "pm2:logs": "pm2 logs scraper"
   },
   "dependencies": {
     "@puppeteer/browsers": "^2.13.0",

@@ -36,10 +36,11 @@ if [ ! -f .env ]; then
   echo "Edit $APP_DIR/.env with HUBSPOT_ACCESS_TOKEN, then: systemctl restart scraper"
 fi
 
-cp deploy/scraper.service /etc/systemd/system/scraper.service
-systemctl daemon-reload
-systemctl enable scraper
-systemctl restart scraper
+npm install -g pm2
+pm2 delete scraper 2>/dev/null || true
+pm2 start ecosystem.config.cjs
+pm2 save
+pm2 startup systemd -u root --hp /root
 
 ufw allow OpenSSH
 ufw allow 8000/tcp
