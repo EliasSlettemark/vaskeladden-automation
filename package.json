@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "postinstall": "npx puppeteer browsers install chrome",
+    "install-chrome": "npx --yes @puppeteer/browsers install chrome",
     "start": "node --env-file=.env dist/index.js",
     "start:dev": "tsx --env-file=.env.local src/index.ts"
   },
   "dependencies": {
+    "@puppeteer/browsers": "^2.13.0",
     "@hubspot/api-client": "^13.5.0",
     "express": "^5.2.1",
     "puppeteer-core": "^25.0.4",

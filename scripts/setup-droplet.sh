@@ -27,9 +27,9 @@ if [ ! -f "$APP_DIR/package.json" ]; then
 fi
 
 cd "$APP_DIR"
-npm ci
+npm ci --ignore-scripts
 npm run build
-npx puppeteer browsers install chrome
+npm run install-chrome
 
 if [ ! -f .env ]; then
   cp .env.example .env
